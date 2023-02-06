@@ -7,7 +7,7 @@ import { questionsService } from "../Services/QuestionsService.js";
 
 function _drawQuestions(){
     let template =''
-    appState.questions.forEach(q => template += q.question)
+    appState.questions.forEach(q => template += q.QuestionCardTemplate)
     setHTML('question-container', template)
 }
 

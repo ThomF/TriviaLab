@@ -7,27 +7,26 @@ export class Question {
             this.difficulty = data.difficulty;
             this.question = data.question;
             this.answer = data.correct_answer
-            this.wrong = data.wrong_answer
+            this.wrong = data.incorrect_answers
         }
 
 
 
 
 
-        get QuestionCard(){
-            return `
+        get QuestionCardTemplate(){
+            return /*html */`
             <div class="col-12">
-            <div class="row">
-            <div class="col-12">
-                <div class="card">
-                <div class="card-body">
-                    <h4>${this.question}</h4>
+                <div class="card bg-dark">
+                    <p>${this.question}</p>
                 </div>
+                .<div class="row justify-content-center align-items-center g-2 bg-dark">
+                    <div class="col-3">${this.answer}</div>
+                    <div class="col-3">${this.wrong}</div>
+                    <div class="col-3">${this.wrong}</div>
+                    <div class="col-3">${this.wrong}</div>
                 </div>
-                
             </div>
-            </div>
-        </div>  
             
             `
         }
