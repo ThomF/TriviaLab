@@ -5,12 +5,12 @@ import { Question } from "../Models/Question.js";
 class QuestionsService {
 
     async getQuestions(){
-        const res = await open_tbd.get('api.php?amount=4&category=15&difficulty=hard')
+        const res = await open_tbd.get('api.php?amount=1&category=15&difficulty=hard')
         console.log('WORKING ON IT', res);
 
-        console.log(res.data)
+        console.log('this is the res.data', res.data)
 
-        const QuestionsNeeded = res.data.filter(q => q.questions).map(q => new Question(q))
+        const QuestionsNeeded = res.data.results.map(q => new Question(q))
         appState.questions = QuestionsNeeded
     }
 
